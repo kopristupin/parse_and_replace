@@ -38,7 +38,7 @@ func main() {
 	varsToFind := []string{"VersionMajor", "VersionMinor", "VersionPatch"}
 	versions := parseVarsInFile(f, varsToFind)
 	var finalVersion []byte
-	if len(versions) != 3 {
+	if len(versions) != len(varsToFind) {
 		finalVersion = append(finalVersion, "1.0"...)
 	} else {
 		for _, v := range varsToFind {
